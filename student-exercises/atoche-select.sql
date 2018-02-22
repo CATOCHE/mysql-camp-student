@@ -10,3 +10,16 @@ SELECT ID, name FROM band WHERE ID = 4;
 SELECT * FROM band WHERE name LIKE '% and %';
 SELECT * FROM individual WHERE firstName LIKE '_im';
 SELECT * FROM band WHERE name LIKE '%s';
+
+SELECT p.firstName, p.lastName, b.battingAvg
+FROM batting b
+INNER JOIN player p ON b.playerID = p.ID;
+
+SELECT t.teamName, p.firstName, p.lastName
+FROM roster r
+INNER JOIN player p ON r.playerID = p.ID
+INNER JOIN team t ON r.teamID = t.ID WHERE t.teamName = 'Boston Red Sox';
+
+SELECT * FROM vTeamRoster;
+DESCRIBE vTeamRoster;
+SHOW CREATE VIEW vteamRoster;
